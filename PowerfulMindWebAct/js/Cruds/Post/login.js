@@ -2,7 +2,7 @@ const form = document.getElementById("contenedor");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   FileList;
-  // sendData();
+  sendData();
 });
 function sendData() {
   const url = "/login.html"; // reemplazar con la URL de tu API
