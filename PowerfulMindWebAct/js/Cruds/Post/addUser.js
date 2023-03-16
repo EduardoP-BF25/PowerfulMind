@@ -6,7 +6,7 @@ form.addEventListener("submit", (event) => {
     // sendData();
 });
 function sendData() {
-    const url = "powerfulmind.up.railway.app/registrarse.html"; // reemplazar con la URL de tu API
+    const url = "/registrarse.html"; // reemplazar con la URL de tu API
 
     const data = {
       
@@ -31,7 +31,7 @@ function sendData() {
         console.log("Respuesta del servidor:", data);
         
         if(data[0] != undefined ){
-        location.href = 'powerfulmind.up.railway.app/login.html';
+        location.href = '/login.html';
         } 
 
         // hacer algo con la respuesta del servidor, como mostrar un mensaje al usuario
