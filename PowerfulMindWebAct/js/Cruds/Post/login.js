@@ -24,7 +24,7 @@ function sendData() {
       console.log("Respuesta del servidor:", data);
       localStorage.setItem("token", data[0])
       if(data[0] != undefined && data[1].roleUsuario == "Administrador"){
-        location.href = 'powerfulmind.up.railway.app/homeAdmin.html';
+        location.href = './homeAdmin.html';
 
       } 
       else if (data[0] != undefined && data[1].roleUsuario == "Psicologo") {
