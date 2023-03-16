@@ -5,7 +5,7 @@ form.addEventListener("submit", (event) => {
   // sendData();
 });
 function sendData() {
-  const url = "https://powerfulmindapi.up.railway.app/login.html"; // reemplazar con la URL de tu API
+  const url = "powerfulmindapi.up.railway.app/login.html"; // reemplazar con la URL de tu API
   const data = {
     correo: document.getElementById("inputCorreo").value,
     password: document.getElementById("inputcontra").value,
@@ -24,11 +24,11 @@ function sendData() {
       console.log("Respuesta del servidor:", data);
       localStorage.setItem("token", data[0])
       if(data[0] != undefined && data[1].roleUsuario == "Administrador"){
-        location.href = 'https://powerfulmind.up.railway.app/homeAdmin.html';
+        location.href = 'powerfulmind.up.railway.app/homeAdmin.html';
 
       } 
       else if (data[0] != undefined && data[1].roleUsuario == "Psicologo") {
-        location.href = 'https://powerfulmind.up.railway.app/homePsicologo.html';
+        location.href = 'powerfulmind.up.railway.app/homePsicologo.html';
 
       }
 
