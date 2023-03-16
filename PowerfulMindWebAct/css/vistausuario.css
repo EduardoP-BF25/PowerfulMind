@@ -1,0 +1,99 @@
+
+
+main
+{
+    margin-top: 138px;
+    height: auto;
+    width: 100%;
+}
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    line-height: 1.4;
+}
+
+
+
+.portada{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(45deg, #34f322, #dde7f7);
+    border-radius: 0 0 20px 20px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.acerca{
+    border-radius: 10px;
+   
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+ 
+    
+}
+
+.header{
+  
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(#9dfcad, transparent);
+   margin-bottom: 1.25rem;
+}
+
+.avatar{
+    width: 200px;
+    height: 200px;
+    border-radius: 60px;
+}
+
+.user-name{
+    font-size: 35px;
+    margin-top: 14px;
+}
+
+.redes{
+list-style: none;
+text-align: center;
+padding: 0%;
+background-color: rgb(198, 245, 151);
+}
+
+.redes li{
+    display: inline-block;
+    margin: 5px;
+}
+
+
+
+.email{
+    background-image: url("images\sobre.png");
+    
+}
+
+.facebok{
+    background-image: url("images\sobre.png");
+}
+.twitter{
+    background-image: url("images\sobre.png");
+}
+
+.about{
+    
+    padding: 10px;
+}
+.about h3{
+    color: #545454;
+    font-size: 16px;
+}
+.about p{
+    color: #545454;
+    font-size: 14px;
+}
+

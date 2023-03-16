@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powerfulminds </title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+    <link rel="stylesheet" href="css/usuario.css">
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+    crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    
+  
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+<body>
+
+  <header class="fixed-top">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-success p-1" id="navegador">
+        <div class="container-fluid">
+          <a class="navbar-brand  me-4" href="index.html">  <img class="logo" src="images/POWER_LOGO.png" alt="Logo"> </a>
+          <h1 class="d-none d-lg-block text-white titulo">Powerfulminds </h1>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse m-lg-3 " id="menu">
+            <ul class=" navegador navbar-nav me-auto ">
+              <li class="nav-item">
+                <a class="nav-link active bg-dark text-white" aria-current="page" href="index.html">Inicio</a>
+              </li>
+            
+            
+              
+            </ul>
+            <form class="d-flex">
+                <a class=" login  btn btn-secondary m-2" href="loginUsuario.html" role="button">Ingresar</a>
+                <a class=" registrarse btn btn-light  m-2" href="registrarse.html" role="button">Registrarse</a>
+
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="ajuste2"></div>
+
+    <main class="main bg-warning ">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-lg-5">
+                  <div class="card shadow-lg border-0 rounded-lg mt-5 mb-5">
+                      <div class="card-body">
+
+                        <form id="contenedor" class="row justify-content-center">
+                          <div class="col text-center mb-4 border-bottom-1 border-dark">
+                            <h2>Inicia Sesion</h2>
+                          </div>                   
+                          <div class="mb-3">
+                            <label for="inputEmail">Correo Electronico:</label>
+                            <input class="form-control" id="inputCorreo" type="email" placeholder="Escriba su correo" />
+                          </div>
+                          <div class="mb-3">
+                            <label for="inputcontra">Contraseña:</label>
+                            <input class="form-control" id="inputcontra" type="password" placeholder="Escriba su contraseña" />                            
+                          </div>            
+                          <div class="mb-3">
+                              <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
+                              <label class="form-check-label" for="inputRememberPassword">Recordarme</label>
+                          </div>
+                          <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                              <a class="small" href="contraseña.html">¿Olvido su contraseña?</a>
+                              <a href="registrarse.html">Registrarse</a>
+                                                       
+                          </div>
+                          
+                            <div class="card-footer text-center py-3">
+                              <input type="submit" class="btn btn-primary small"  name="Registrarse" value="Registrarse" onclick="sendData()" >
+                              <!-- <div class="small"> <a class="btn btn-primary" href=".html">Login</a></div> -->
+                          </div>                                
+                        </form>
+
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </main>
+
+    <footer class="bg-dark text-white text-center text-lg-start ">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+           
+            <a href="index.html" class="logo">  <img class="logo" src="images/POWER_LOGO.png" alt="Logo"> </a>
+            <p>
+             
+            </p>
+          </div>
+          <!--Grid column-->
+    
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <div id="box2" class="box">
+                  <h5>CONTACTO</h5>
+                  <p>Telefono:  99-94-56-88-99</p>
+                  <p>Email: powerfurminds@gmail.com</p>
+              </div>
+          </div>
+          <!--Grid column-->
+          
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <div  id="box1" class="box">
+                  <h5>SIGUENOS</h5>
+                 
+                <p>Carrillo Cruz Alondra Michelle </p>
+                <p> Poot Hoil Dalia Asucena</p>
+                <p> Puc Barrera Angel Eduardo</p>
+              </div>
+  
+              
+          </div>
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+              <section class="mb-4">
+                  <!-- Facebook -->
+                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+            
+                  <!-- Twitter -->
+                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+            
+                  <!-- Google -->
+                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                    ><i class="fab fa-google"></i
+                  ></a>
+            
+                  <!-- Instagram -->
+                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+            
+                  <!-- Linkedin -->
+                  <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+            
+                 
+                </section>
+             </div> 
+  
+         
+  
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+    
+    
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+
+
+      <script src="js/Cruds/Post/login.js"></script>
+
+      <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+</body>
+</html>
