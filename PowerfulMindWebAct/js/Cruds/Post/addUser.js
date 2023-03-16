@@ -3,7 +3,7 @@ const form = document.getElementById("addUser");
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     FileList;
-    // sendData();
+    sendData();
 });
 function sendData() {
     const url = "/registrarse.html"; // reemplazar con la URL de tu API
