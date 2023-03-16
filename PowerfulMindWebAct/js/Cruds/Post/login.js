@@ -3,6 +3,7 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   FileList;
   sendData();
+  
 });
 function sendData() {
   const url = "/login.html"; // reemplazar con la URL de tu API
