@@ -40,6 +40,12 @@ export const Paciente = sequelize.define('paciente',{
         allowNull:  false,
         defaultValue: DataTypes.NOW,
     },
+    statusPaciente:{
+        type: DataTypes.ENUM('Activo', 'Inactivo'),
+        defaultValue: 'Activo',
+        allowNull: false,
+        
+    }
 },  {
         timestamps: false
     }

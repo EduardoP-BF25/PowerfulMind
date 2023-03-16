@@ -15,9 +15,8 @@ export const post = async (req, res) => {
         const nuevoPaciente = await Paciente.create({
             nombrePaciente, apellidoPaciente, correoPaciente, telefonoPaciente, fechaNacimiento, imagePaciente
         });
-        
-        console.log(token);
-        res.status(201).json({token ,nuevoPaciente});
+
+        res.status(201).json({nuevoPaciente});
         console.log(nuevoPaciente);
         
     } catch (err) {
@@ -29,23 +28,18 @@ export const post = async (req, res) => {
 //PUT
  
 export const put = async (req, res) => {
-    let { 
-        nombrePaciente, apellidoPaciente, correoPaciente, telefonoPaciente, fechaNacimiento, imagePaciente
-    } = req.body;
-
-        password = await bcrypt.hash(password, 10);
-        newPassword = await bcrypt.hash(newPassword, 10);
+    let { idPaciente, newnombrePaciente, newapellidoPaciente, newcorreoPaciente, newtelefonoPaciente, newfechaNacimiento, newimagePaciente} = req.body;
     
     try {
-        const actualizarPaciente = await Paciente.findOne({ where: { [Op.and]: [{correo}, {password}] } })
+        const actualizarPaciente = await Paciente.findOne({ where: { idPaciente} })
 
-        actualizarPaciente.imagePaciente = imagePaciente;
-        actualizarPaciente.newNombrePaciente = nombrePaciente;
-        actualizarPaciente.newApellidoPaciente = apellidoPaciente;
+        actualizarPaciente.imagePaciente = newimagePaciente;
+        actualizarPaciente.nombrePaciente = newnombrePaciente;
+        actualizarPaciente.apellidoPaciente = newapellidoPaciente;
         actualizarPaciente.password = newPassword;
-        actualizarPaciente.telefonoPaciente = telefonoPaciente;
-        actualizarPaciente.fechaNacimiento = fechaNacimiento;
-        actualizarPaciente.correo = correoPaciente;
+        actualizarPaciente.telefonoPaciente = newtelefonoPaciente;
+        actualizarPaciente.fechaNacimiento = newfechaNacimiento;
+        actualizarPaciente.correo = newcorreoPaciente;
         console.log(actualizarPaciente);
         await actualizarPaciente.save();
         res.status(201).json(actualizarPaciente);
@@ -59,13 +53,14 @@ export const put = async (req, res) => {
 //DELETE
 
 export const drop = async (req, res) => {
-    const { curp} = req.body;
+    const { idPaciente} = req.body;
     try {         
 
-        const eliminarPaciente = Paciente.destroy({ where: { curp } });
+        const eliminarPaciente = Paciente.findOne({ where: { idPaciente } });
+        actualizarPaciente.status
         res.status(201).json('Paciente Eliminado');
         console.log(eliminarPaciente);
-        console.log(err);
+        
     } catch (err) {
         
         res.status(500).json(err);

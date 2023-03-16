@@ -44,17 +44,19 @@ export const post = async (req, res) => {
 //PUT
  
 export const put = async (req, res) => {
-    let { nombreUsuario, apellidoUsuario, telefono, correo, password, newPassword} = req.body;
+    let { newimageUsuario, newnombreUsuario, newapellidoUsuario, newtelefono, correo, newcorreo, password, newPassword} = req.body;
 
         password = await bcrypt.hash(password, 10);
         newPassword = await bcrypt.hash(newPassword, 10);
     
     try {
         const actualizarUsuario = await Usuario.findOne({ where: { [Op.and]: [{correo}, {password}] } })
-        actualizarUsuario.newNombreUsuario = nombreUsuario;
-        actualizarUsuario.newApellidoUsuario = apellidoUsuario;
+        actualizarUsuario.imageUsuario = newnombreUsuario;
+        actualizarUsuario.nombreUsuario = newnombreUsuario;
+        actualizarUsuario.apellidoUsuario = newapellidoUsuario;
+        actualizarUsuario.correo = newcorreo;
         actualizarUsuario.password = newPassword;
-        actualizarUsuario.telefono = telefono;
+        actualizarUsuario.telefono = newtelefono;
         console.log(actualizarUsuario);
         await actualizarUsuario.save();
         res.status(201).json(actualizarUsuario);
@@ -66,13 +68,13 @@ export const put = async (req, res) => {
 //DELETE
 
 export const drop = async (req, res) => {
-    const { correo} = req.body;
+    const {idUsuario } = req.body;
     try {         
-        const actualizarUsuario = await Usuario.findOne({ where:{ correo } });
-        actualizarUsuario.newNombreUsuario = nombreUsuario;
-        actualizarUsuario.newApellidoUsuario = apellidoUsuario;
-        actualizarUsuario.password = newPassword;
-        actualizarUsuario.telefono = telefono;
+        const actualizarUsuario = await Usuario.findOne({ where:{ idUsuario } });
+        actualizarUsuario.status = "Inactivo";
+        // actualizarUsuario.newApellidoUsuario = apellidoUsuario;
+        // actualizarUsuario.password = newPassword;
+        // actualizarUsuario.telefono = telefono;
         console.log(actualizarUsuario);
         await actualizarUsuario.save();
         res.status(201).json(actualizarUsuario);

@@ -8,7 +8,7 @@ const pacienteRouter = Router();
 pacienteRouter.post('/add', validateReutilizable, pacienteController.post);
 pacienteRouter.put('/update', authentification, pacienteController.put);
 pacienteRouter.delete('/delete', authentification, authorization, pacienteController.drop);
-pacienteRouter.get('/searchOne', authentification, authorization, pacienteController.getOne);
-pacienteRouter.get('/searchAll', authentification, authorization, pacienteController.getAll);
+pacienteRouter.get('/searchOne', pacienteController.getOne);
+pacienteRouter.get('/searchAll', pacienteController.getAll);
 
 export default pacienteRouter;

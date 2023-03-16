@@ -26,18 +26,14 @@ export const post = async (req, res) => {
 
 // PUT
 export const put = async (req, res) => {
-    let { imagePublicacion, tituloPublicacion, cuerpoPublicacion, } = req.body;
-
-        password = await bcrypt.hash(password, 10);
-        newPassword = await bcrypt.hash(newPassword, 10);
+    let { idPublicacion, newimagePublicacion, newtituloPublicacion, newcuerpoPublicacion, } = req.body;
     
     try {
-        const actualizarPublicacion = await Publicacion.findOne({ where: { [Op.and]: [{correo}, {password}] } })
-        actualizarPublicacion.newTituloPub = tituloPublicacion;
-        actualizarPublicacion.newImagenPub = imagePublicacion;
-        actualizarPublicacion.newcuerpoPub= cuerpoPublicacion;
-        actualizarPublicacion.newStatusPublicacion = statusPublicacion;
-
+        const actualizarPublicacion = await Publicacion.findOne({ where: {idPublicacion} })
+        actualizarPublicacion.tituloPublicacion = tituloPublicacion;
+        actualizarPublicacion.imagePublicacion = newimagePublicacion;
+        actualizarPublicacion.cuerpoPublicacion = newcuerpoPublicacion;
+        // actualizarPublicacion.newStatusPublicacion = statusPublicacion;
         console.log(actualizarPublicacion);
         await actualizarPublicacion.save();
         res.status(201).json(actualizarPublicacion);
@@ -52,16 +48,14 @@ export const put = async (req, res) => {
 //DELETE
 
 export const drop = async (req, res) => {
-    const { correo} = req.body;
+    const { idPublicacion} = req.body;
     try {         
-        const actualizarUsuario = await Usuario.findOne({ where: { [Op]: [{correo}] } })
-        actualizarUsuario.newNombreUsuario = nombreUsuario;
-        actualizarUsuario.newApellidoUsuario = apellidoUsuario;
-        actualizarUsuario.password = newPassword;
-        actualizarUsuario.telefono = telefono;
-        console.log(actualizarUsuario);
-        await actualizarUsuario.save();
-        res.status(201).json(actualizarUsuario);
+        const actualizarPublicacion = await Publicacion.findOne({ where: {idPublicacion} })
+        actualizarPublicacion.statusPublicacion = "Inactivo";
+
+        console.log(actualizarPublicacion);
+        await actualizarPublicacion.save();
+        res.status(201).json(actualizarPublicacion);
     } catch (err) {
         
         res.status(500).json(err);
@@ -73,11 +67,10 @@ export const drop = async (req, res) => {
 //GET
 
 export const getOne = async (req, res) => {
-    const { idCublicacion } = req.body;
+    const { idPublicacion } = req.body;
     try {
-        const nuevoCublicacion = await Cublicacion.findOne( { where:{ idCublicacion } });
-        res.status(201).json(nuevoCublicacion);
-
+        const findPublicacion = await Publicacion.findOne( { where:{ idPublicacion } });
+        res.status(201).json(findPublicacion);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -88,8 +81,8 @@ export const getOne = async (req, res) => {
 
 export const getAll = async (req, res) => {
     try {
-        const cublicacions = await Cublicacion.findAll();
-        res.status(201).json(cublicacions);
+        const publicaciones = await Publicacion.findAll();
+        res.status(201).json(publicaciones);
 
     } catch (err) {
         res.status(500).json(err);
