@@ -34,7 +34,7 @@ export const post = async (req, res) => {
         const token = jwt.sign(usuarioNuevo.dataValues, process.env.JWT_KEY);
         console.log(token);
         res.status(201).json({token ,usuarioNuevo});
-        console.log(usuarioNuevo);
+        console.log(usuarioNuevo , "Bienvenido a PowerfulMind");
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
