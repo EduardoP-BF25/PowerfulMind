@@ -3,7 +3,7 @@ const form = document.getElementById("addUser");
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     FileList;
-    sendData();
+    // sendData();
 });
 function sendData() {
     const url = "https://powerfulmind.up.railway.app/registrarse"; // reemplazar con la URL de tu API
