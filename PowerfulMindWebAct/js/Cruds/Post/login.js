@@ -2,11 +2,12 @@ const form = document.getElementById("contenedor");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   FileList;
-  sendData();
-  
+  // sendData();
 });
 function sendData() {
   const url = "https://powerfulmind.up.railway.app/login"; // reemplazar con la URL de tu API
+  // const url = "http://localhost:3000/usuario/login"; // reemplazar con la URL de tu API
+  
   const data = {
     correo: document.getElementById("inputCorreo").value,
     password: document.getElementById("inputcontra").value,
@@ -24,11 +25,15 @@ function sendData() {
       console.log("Respuesta del servidor:", data);
       localStorage.setItem("token", data[0])
       if(data[0] != undefined && data[1].roleUsuario == "Administrador"){
-        location.href = 'https://powerfulmind.up.railway.app/homeAdmin';
+        // location.href = 'https://powerfulmind.up.railway.app/homeAdmin';
+        location.href = 'https://powerfulmind.up.railway.app/homeAdmin.html';
+
 
       } 
       else if (data[0] != undefined && data[1].roleUsuario == "Psicologo") {
-        location.href = 'https://powerfulmind.up.railway.app/homePsicologo';
+        // location.href = 'https://powerfulmind.up.railway.app/homePsicologo';
+        location.href = 'https://powerfulmind.up.railway.app/homePsicologo.html';
+
 
       }
 

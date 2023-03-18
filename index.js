@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 4001;
 
 async function proyect() {
     try {
-        // sequelize.sync({force: true})
+        sequelize.sync({force: true})
         app.listen(PORT, () => {
             console.log("Bienvenido a PowerfulMind");
         });
@@ -18,6 +18,5 @@ async function proyect() {
         console.log(err);
     }
 }
-
 
 proyect();

@@ -1,7 +1,9 @@
 
 const token = localStorage.getItem('token');
 
-fetch('http://localhost:3000/usuario/searchAll',{
+// fetch('http://localhost:3000/usuario/searchAll',{
+fetch('https://powerfulmind.up.railway.app/usuario/searchAll',{
+
     method:'GET',
     headers: {
         "Content-Type": "aplication/json",
