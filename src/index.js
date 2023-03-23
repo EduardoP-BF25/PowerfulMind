@@ -1,12 +1,14 @@
 import app from "./app.js";
 import { sequelize } from "./config/db.js";
+import { PROYECT } from "./utils/env.js";
+import { PORT } from "./utils/env.js";
 
 import { Cita } from "./models/cita.js";
 import { Usuario } from "./models/usuario.js";
 import { Publicacion } from "./models/publicacion.js";
 import { Paciente } from "./models/paciente.js";
 
-const PORT = process.env.PORT || 4001;
+// const PORT = process.env.PORT || 4001;
 
 async function proyect() {
     try {
