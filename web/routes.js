@@ -22,32 +22,88 @@ webRouter.get('/login', async (req, res) => {
     }
 });
 
+webRouter.get('/sugey', async(req,res)=>{
+    try {
+        console.log('HOLAAAAAAAAAAAAAA');
+        res.render('prueba');
+    } catch (err) {
+        res.render('404');
+    }
+});
+
+
 webRouter.get('/home', async (req, res) => {
-
     try {
-        res.render('home');
+
+
+        res.render('dashboard/index');
     } catch (err) {
         res.render('404');
     }
 });
 
-webRouter.get('/dashboard', async (req, res) => {
-    try {
-        res.render('dashboard/main');
-    } catch (err) {
-        res.render('404');
-    }
-});
 
+// webRouter.get('/registrarse', async (req, res) => {
+//     try {
+//         console.log(req.query);
+//         req.query.status = "Activo";
+//         await Usuario.create(req.query);
+//         res.redirect('https://powerfulmind.up.railway.app/registrarse.html')
+//     } catch (err) {
+        
+//         res.status(403).json(err);
+//     }
+// });
 
 webRouter.get('/registrarse', async (req, res) => {
     try {
-        console.log(req.query);
-        req.query.status = "Inactvo";
-        await Usuario.create(req.query);
-        res.redirect('https://powerfulmind.up.railway.app/registrarse.html')
+
+        res.render('dashboard/registrarse');
     } catch (err) {
         
         res.status(403).json(err);
     }
 });
+
+webRouter.get('/usuario/searchAll', async (req, res) => {
+    try {
+       const usuarios = await Usuario.findAll();
+        res.render('dashboard/homeAdmin', {usuarios});
+    } catch (err) {
+        res.render('404');
+    }
+ });
+
+
+// URL DE LA PAGINA
+ webRouter.get('/usuario/searchAll/activos', async (req, res) => {
+    try {
+       const usuario = await Usuario.findAll({where:{ status : "Activo"}});
+     //  Ubicacion del archivo
+        res.render('dashboard/homeAdmin', usuario);
+    } catch (err) {
+        res.render('404');
+    }
+ });
+// URL DE LA PAGINA
+ webRouter.get('/usuario/searchAll/inactivos', async (req, res) => {
+    try {
+       const usuario = await Usuario.findAll({where:{ status : "Inactivo"}});
+     //   Ubicacion del archivo
+        res.render('dashboard/homeAdmin', usuario);
+    } catch (err) {
+        res.render('404');
+    }
+ });
+
+//  webRouter.get('/automovil', async (req, res) => {
+//     try {
+//         const automoviles = await Automovil.findAll({where:{StatusId:1}});
+//         const anios = await Years.findAll({where:{StatusId:1}});
+//         const marcas = await Marca.findAll({where:{StatusId:1}});
+//         const modelos = await Modelo.findAll({where:{StatusId:1}});
+//         res.render('dashboard/automovil', { automoviles, anios, marcas, modelos });
+//     } catch (err) {
+//         res.render('404');
+//     }
+// });

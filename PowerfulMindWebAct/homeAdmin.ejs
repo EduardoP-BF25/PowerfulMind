@@ -123,9 +123,17 @@
                                     </tr>
                                 
 
-                                <tbody onload="getData()" id="users">
+
+                                <tbody>
+                                    <% Usuario.forEach(usuario => { %>
+                                        <td><%= usuario.imageUsuario  %></td>
+                                        <td><%= Psicologos.nombreUsuario%></td>
+                                        <td><%= Psicologos.apellidoUsuario%></td>
+                                        <td><%= Psicologos.fechaNacimiento%></td>                                         
+                                    <% }) %>
 
                                 </tbody>
+
                             </table>
                         </div>
                     </div>

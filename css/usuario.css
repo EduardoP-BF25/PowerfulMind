@@ -1,0 +1,138 @@
+.logo
+{
+    width: 150px;
+    height: 150px;
+}
+
+.login:hover
+  {
+    background-color: rgb(243, 243, 249);
+  }
+  .registrarse:hover
+  {
+    background-color: rgb(12, 12, 12);
+  }
+
+  .login:hover 
+  {
+    text-decoration: none;
+    color: rgb(20, 20, 20);
+  }
+
+  .registrarse:hover 
+  {
+    text-decoration: none;
+    color: rgb(245, 241, 241);
+  }
+
+
+.aside-img
+{
+
+    width: 245px;
+    height: 220px;
+
+}
+
+.pie
+{
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.5); 
+}
+
+
+.producto
+{
+    width: 100px;
+    height: 250px;
+    border: 5px solid #edf5ee;
+}
+
+.img-modal
+{
+     width: 50%;
+}
+
+.ajuste
+{
+    height: 133px;
+}
+
+
+#contactanos
+{
+  background-color: #ecf5f4;
+  padding: 5px;
+}
+
+#carritoTab img
+{
+   width: 100px;
+   height: 100px;
+
+}
+
+#carritoTab td
+{
+  text-align: center;
+  background-color: #edf5ee;
+  color: black;
+  text-align: center;
+}
+
+#carritoTab td input[type=text]
+{
+
+  width: 90px;
+  border: none;
+}
+
+
+#productos .card:hover
+{
+ border-color: green;
+ cursor: pointer;
+ transform: scale(1.04);
+
+}
+
+
+#productos .card
+{
+margin: 50px;
+width: 310px;
+
+}
+
+
+
+@media screen and (max-width: 490px) {
+  #productos .card
+  {
+  margin: 0px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  #productos .card
+  {
+    width:270px;
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: 359px) {
+  #productos .card
+  {
+    width:180px;
+    margin: 5px;
+  }
+}
+
+
+#carritoTab td button
+{
+  --bs-bg-opacity: 1;
+  background-color: #ddc4f0 !important;
+  color: white;
+}

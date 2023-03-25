@@ -9,7 +9,7 @@ const usuarioRouter = Router();
 usuarioRouter.post('/add', validaCamposUsuario, validateReutilizable, usuarioController.post);
 usuarioRouter.put('/update', authentification, usuarioController.put);
 usuarioRouter.delete('/delete', authorization, authentification,  usuarioController.drop);
-usuarioRouter.get('/searchOne', authorization, authentification,  usuarioController.getOne);
+usuarioRouter.get('/searchOne',  usuarioController.getOne);
 usuarioRouter.get('/searchAll', usuarioController.getAll);
 usuarioRouter.post('/login', usuarioController.login);
 export default usuarioRouter;

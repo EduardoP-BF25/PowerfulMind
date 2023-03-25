@@ -1,0 +1,118 @@
+
+  /* Contactanos */
+
+
+
+  .formulario
+  {
+    width: 45%;
+    min-height: auto;
+    margin: 10px;
+  
+  }
+
+  .contenedor_formulario {
+    border-radius: 5px;
+    background-color: #e7c5f1;
+    padding: 20px;
+    border: 4px solid black;
+    border-radius: 20px;
+
+  }
+
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(8, 8, 8);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  input[type=file] {
+    width: 100%;
+    padding: 12px;
+    background-color: #f7f79d;
+    border: 1px solid rgb(8, 8, 8);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  input[type=password] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(14, 13, 13);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  input[type=number] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(15, 15, 15);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+ .contenedor_formulario input[type=submit] {
+    background-color: #92F1B5;
+    color: rgb(20, 19, 19);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+   
+  }
+  
+  input[type=submit]:hover {
+    background-color: #0f100f;
+    color: #ccc;
+  }
+
+  .contenedor_formulario .entrar
+  {
+    
+    background-color: #D39EFC;
+    color: rgb(20, 19, 19);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+        
+  }
+
+  .contenedor-boton
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .entrar a{
+    text-decoration: none;
+  }
+
+  .main
+  {
+    margin-top: 135px;
+    width: 100%;
+    height: auto;
+   
+
+  }
+
+ .table-cont
+ {
+   width: 10%;
+ }
+

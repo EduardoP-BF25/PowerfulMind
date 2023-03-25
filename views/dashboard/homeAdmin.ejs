@@ -19,7 +19,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
 
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/estilos.css" rel="stylesheet" />
+        
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
      
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -122,10 +123,16 @@
                                         
                                     </tr>
                                 
+                                    <tbody>
+                                        <% usuarios.forEach(Psicologos => { %>
+                                            <td><%= Psicologos.imageUsuario  %></td>
+                                            <td><%= Psicologos.nombreUsuario%></td>
+                                            <td><%= Psicologos.apellidoUsuario%></td>
+                                            <td><%= Psicologos.fechaNacimiento%></td>                                         
+                                        <% }) %>
 
-                                <tbody onload="getData()" id="users">
+                                    </tbody>
 
-                                </tbody>
                             </table>
                         </div>
                     </div>
