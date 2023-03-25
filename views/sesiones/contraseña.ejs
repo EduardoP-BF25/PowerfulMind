@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Powerfulminds </title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="../images/POWER_LOGO.png">
 
 
+
+  
     <link rel="stylesheet" href="css/usuario.css">
     
 
@@ -26,9 +28,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/estilos.css">
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-    <script src="js/main.js"></script>
 </head>
 <body>
 
@@ -42,93 +41,68 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse m-lg-3" id="menu">
-            <ul class="navegador navbar-nav me-auto ">
-              <li class="nav-item ">
-                <a class="nav-link active bg-dark text-white " aria-current="page" href="index.html">Inicio</a>
+          <div class="collapse navbar-collapse m-lg-3 " id="menu">
+            <ul class=" navegador navbar-nav me-auto ">
+              <li class="nav-item">
+                <a class="nav-link active bg-dark text-white" aria-current="page" href="index.html">Inicio</a>
               </li>
-
+            
+            
+              
             </ul>
             <form class="d-flex">
-                <a class=" login  btn btn-secondary m-2" href="login.html" role="button">Login</a>
-                <a class=" registrarse btn btn-light  m-2" href="registrarse.html" role="button" >Registrarse</a>
+                <a class=" login  btn btn-secondary m-2" href="loginUsuario.html" role="button">Login</a>
+                <a class=" registrarse btn btn-light  m-2" href="registrarse.html" role="button">Registrarse</a>
 
             </form>
           </div>
         </div>
       </nav>
     </header>
+
     <div class="ajuste2"></div>
 
     <main class="main bg-warning ">
       <div class="container">
           <div class="row justify-content-center">
-              <div class="col-lg-8">
-
-                  <div class="card shadow-lg border-5 rounded-4 mt-md-5 mb-md-5 ">
-                    <div class="card-header text-center py-3">
-                      <h2>Registrate</h2>
-                   </div>
-                   <div class="card-body">
-                          
-                    <form id="addUser" class="row justify-content-center">
-
-                      <div class="col-sm-6">
-       
-                        <div class="mb-3">
-                              <label class="form-label">Nombre</label>
-                              <input type="txt" class="form-control" id="nombreusuario" placeholder="Escriba su nombre" name="nombre" autocomplete="on" required/>
-                        </div>
-
-                        <div class="mb-3">
-                              <label class="form-label">Apellidos</label>
-                              <input type="txt" class="form-control" id="apellidousuario" placeholder="Escriba su apellido" name="apellidos" required/>
+              <div class="col-lg-5">
+                  <div class="card shadow-lg border-0 rounded-lg mt-5 mb-5">
+                      <div class="card-body">
+                          <form>
+                            <div class="col text-center mb-4 border-bottom-1 border-dark">
+                            <h2>Recuperar contraseña</h2>
                           </div>
+                              <div class="mb-3">
+                                <label for="inputEmail">Correo Electronico:</label>
+                                <input class="form-control" id="inputEma" type="email" placeholder="Escriba su correo" />
+                              </div>
+                              <div class="mb-3">
+                                <label for="inputcodigo">Escriba el codigo que se envio a su correo: </label>
+                                <input class="form-control" id="inputcodigo" type="txt" placeholder="Escriba el codigo" />
 
-                        <div class="mb-3">
-                          <label for="form-label">Fecha de nacimiento</label>
-                          <input class="form-control" id="fechaNacimiento" type="date" required/>
-                        </div>                    
-
-                        <div class="mb-3">
-                          <label for="form-label">Correo Electronico</label>
-                          <input class="form-control" id="correo" type="txt" placeholder="Escriba su correo" required/>
-                        </div>
-
-                        <div class="mb-3">
-                          <label for="form-label">Contraseña</label>
-                          <input class="form-control" id="contraseña" type="password" placeholder="************" required/>                                  
-                        </div>
-                        <div class="mb-3">
-                          <label for="form-label">ROL</label>
-                          <select class="form-control" id="roleUsuario" type="txt"  required >
-                            <option value="Administrador">Administrador</option>
-                            <option value="Psicologo">Psicologo</option>  
-                            <option value="Paciente">Paciente</option>  
-
-                          </select>                               
-                        </div>                               
-
-                      </div>
-                       <div class="d-flex align-items-center justify-content-between mt-3 m-lg-3  ">
-                          <a class="mx-5" href="">¿Ya tienes una cuenta?</a>
-                          <a class="mx-5" href="login.html">Iniciar sesión</a>
-                          
+                              </div>
+                              <div class="mb-3">
+                                <label for="inputcontra">Contraseña nueva:</label>
+                                <input class="form-control" id="inputcontra" type="txt" placeholder="Escriba su contraseña nueva" />
+                                 
+                              </div>
+                              <div class="mb-3">
+                                <label for="confirmarcontra">Confirmar contraseña:</label>
+                                <input class="form-control" id="confirmarcontra" type="txt" placeholder="Escriba su contraseña nuevamente" />
+                                 
+                              </div>
+                              
+                          </form>
                       </div>
                       <div class="card-footer text-center py-3">
-                          <input type="submit" class="btn btn-primary" name="Registrarse" value="Registrarse" onclick="sendData()" >
-                      </div>                              
-                  </form>
-              </div>
-
+                          <div class="small"> <a class="btn btn-primary" href="index.html">Recuperar</a></div>
+                      </div>
                   </div>
               </div>
           </div>
       </div>
   </main>
 
-
-  
     <footer class="bg-dark text-white text-center text-lg-start ">
       <!-- Grid container -->
       <div class="container p-4">
@@ -136,7 +110,7 @@
         <div class="row">
           <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            
+           
             <a href="index.html" class="logo">  <img class="logo" src="images/POWER_LOGO.png" alt="Logo"> </a>
             <p>
              
@@ -159,7 +133,6 @@
               <div  id="box1" class="box">
                   <h5>SIGUENOS</h5>
                  
-                  
                   <p>Carrillo Cruz Alondra Michelle </p>
                   <p>Poot Hoil Dalia Asucena </p>
                   <p>Puc Barrera Angel Eduardo </p>
@@ -213,11 +186,8 @@
       </div>
       <!-- Copyright -->
     </footer>
-    
+
+
       <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
-      <script src="js/main.js"></script>
-      <script src="js/Cruds/Post/addUser.js"></script>
-
-
 </body>
 </html>

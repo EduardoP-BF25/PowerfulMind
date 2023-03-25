@@ -13,7 +13,7 @@ dotevn.config({ path: './.env' });
 
 const app = express();
 
-app.use('/', express.static('./PowerfulMindWebAct'));
+app.use('/', express.static('./public'));
 app.set('view engine', 'ejs');
 app.use(cors())
 app.use(express.json());
