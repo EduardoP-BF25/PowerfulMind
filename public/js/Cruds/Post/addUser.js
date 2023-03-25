@@ -31,7 +31,7 @@ function sendData() {
         console.log("Respuesta del servidor:", data);
         
         if(data[0] != undefined ){
-            location.href = 'http://localhost:3000/powerfulMind/login';
+            location.href = 'https://powerfulmind.up.railway.app/powerfulMind/login';
         } 
 
         // hacer algo con la respuesta del servidor, como mostrar un mensaje al usuario
