@@ -18,25 +18,10 @@ webRouter.get('/home', async (req, res) => {
 webRouter.get('/registrarse', async (req, res) => {
     try {
         console.log(req.query);
-
-
         res.render('sesiones/registrarse');
-        // await Usuario.create(req.query);        
     } catch (err) {
         res.render('404');
     }   
-});
-
-webRouter.get('/web-registro-detalleventa', async (req, res) => {
-    try {
-        console.log(req.query);
-        req.query.StatusId = 1;
-        await DetalleVenta.create(req.query);
-        res.redirect('https://apidigilist-production.up.railway.app/digilist/detalleventa')
-    } catch (err) {
-        // res.render('404');
-        res.status(403).json(err);
-    }
 });
 
 
