@@ -25,13 +25,13 @@ function sendData() {
       console.log("Respuesta del servidor:", data);
       localStorage.setItem("token", data[0])
       if(data[0] != undefined && data[1].roleUsuario == "Administrador"){
-        location.href = 'https://powerfulmind.up.railway.app/homeAdmin';
+        location.href = 'https://powerfulmind.up.railway.app/powerfulMind/homeAdmin';
         // location.href = 'http://localhost:3000/powerfulMind/homeAdmin';
 
 
       } 
       else if (data[0] != undefined && data[1].roleUsuario == "Psicologo") {
-        location.href = 'https://powerfulmind.up.railway.app/homePsicologo';
+        location.href = 'https://powerfulmind.up.railway.app/powerfulMind/homePsicologo';
         // location.href = 'http://localhost:3000/powerfulMind/homePsicologo';
 
 
