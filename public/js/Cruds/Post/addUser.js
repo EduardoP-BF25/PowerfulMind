@@ -30,9 +30,8 @@ function sendData() {
     .then((data) => {
         console.log("Respuesta del servidor:", data);
         
-        if(data[0] != undefined ){
-            location.href = 'https://powerfulmind.up.railway.app/powerfulMind/login';
-        } 
+        location.href = 'https://powerfulmind.up.railway.app/powerfulMind/login';
+
 
         // hacer algo con la respuesta del servidor, como mostrar un mensaje al usuario
     })

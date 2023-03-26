@@ -321,15 +321,24 @@ th {
   text-align: -webkit-match-parent;
 }
 
+
+tbody, th {
+  border-color:rgba(100, 100, 100, 0.534);
+  border-style: solid;
+  border-width: 2px;
+  padding: 7px;
+  border-radius: 2px;
+  
+}
+
 thead,
-tbody,
 tfoot,
 tr,
-td,
-th {
-  border-color: inherit;
+td{
+  border-color:rgba(100, 100, 100, 0.534);
   border-style: solid;
-  border-width: 0;
+  border-width: .5px;
+  padding: 7px;
 }
 
 label {
@@ -1973,7 +1982,8 @@ progress {
   margin-bottom: 1rem;
   color: #212529;
   vertical-align: top;
-  border-color: #dee2e6;
+  border: 0px solid black;
+  border-color: #000000;
 }
 .table > :not(caption) > * > *, .dataTable-table > :not(caption) > * > * {
   padding: 0.5rem 0.5rem;
