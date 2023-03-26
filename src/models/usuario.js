@@ -26,7 +26,7 @@ export const Usuario = sequelize.define('usuario', {
         allowNull: false
     },
     fechaNacimiento:{
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false
     },
     correo:{
