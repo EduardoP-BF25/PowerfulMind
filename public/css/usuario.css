@@ -141,3 +141,18 @@ width: 310px;
 .oculto {
   display: hidden;
 }
+
+.th-Tables{
+  
+  background-color: #ddc4f0;
+  border-color: #b77ae6;
+ 
+}
+
+#tabla-usuarios,
+#tabla-psics,
+#tabla-pacients,
+#tabla-admins{
+  margin: 20px, 0px, 20px, 0px;
+
+}
