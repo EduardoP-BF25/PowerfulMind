@@ -136,3 +136,8 @@ width: 310px;
   background-color: #ddc4f0 !important;
   color: white;
 }
+
+/* Para ocultar y visualizar tablas */
+.oculto {
+  display: hidden;
+}

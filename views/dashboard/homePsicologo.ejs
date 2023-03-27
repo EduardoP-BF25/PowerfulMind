@@ -147,90 +147,20 @@
                                         </tr> -->
                                     </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <th>1</th>
-                                            <td> <img src=" " width="100px" height="100px" alt=""></td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td>
-                                            <button type="button" class="btn btn-warning bg-warning" data-bs-toggle="modal" data-bs-target="#modalver1"> 
-                                               <i class="bi bi-eye"> </i> 
-                                            Más Info</button> 
-                                            </td>
-                                            <td><button type="button" class="btn btn-danger bg-danger"  onclick = "deleteRow (this)"> <i class="bi bi-trash"></i> Borrar</button> </td>
-                                        </tr>
-
-                                        <tr>
-                                            <th>2</th>
-                                            <td> <img src=" " width="100px" height="100px" alt=""></td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-
-                                            <td>   
-                                              <button type="button" class="btn btn-warning bg-warning" data-bs-toggle="modal" data-bs-target="#modalver2"> 
-                                              <i class="bi bi-eye"></i> 
-                                              Más Info</button>  </td>
-                                            <td><button type="button" class="btn btn-danger bg-danger" onclick = "deleteRow (this)"> <i class="bi bi-trash"></i> Borrar</button> </td>
-                                          </tr>
-                                         
-                                          <tr>
-                                            <th>3</th>
-                                            <td> <img src=" " width="100px" height="100px" alt=""></td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td>  
-                                            <button type="button" class="btn btn-warning bg-warning" data-bs-toggle="modal" data-bs-target="#modalver3"> 
-                                                <i class="bi bi-eye"></i> 
-                                            Más Info</button> 
-                                            </td>
-                                            <td><button type="button" class="btn btn-danger bg-danger" onclick = "deleteRow (this)"> <i class="bi bi-trash"></i> Borrar</button> </td>
-                                          </tr>
-                                          
-                                          <tr >
-                                            <th>4</th>
-                                            <td> <img src=" " width="100px" height="100px" alt=""></td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td>  </td>
-                                            <td>  
-                                              <button type="button" class="btn btn-warning bg-warning" data-bs-toggle="modal" data-bs-target="#modalver4"> 
-                                                <i class="bi bi-eye"></i> 
-                                            Más Info</button> 
-                                            </td>
-                                            <td><button type="button" class="btn btn-danger bg-danger" onclick = "deleteRow (this)"> <i class="bi bi-trash"></i> Borrar</button> </td>
-                                          </tr>
-
-                                          <tr>
-                                            <th>5</th>
-                                            <td> <img src=" " width="100px" height="100px" alt=""></td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td> 
-                                              <button type="button" class="btn btn-warning bg-warning" data-bs-toggle="modal" data-bs-target="#modalver5"> 
-                                                <i class="bi bi-eye"></i> 
-                                            Más Info</button> 
-                                            </td>
-                                            <td><button type="button" class="btn btn-danger bg-danger" onclick = "deleteRow (this)"> <i class="bi bi-trash"></i> Borrar</button> </td>
-                                          </tr>    
+                                        <% pacUsers.forEach(pacUsers =>  { %>
+                                            <tr>
+                                            <td><%=pacUsers.imageUsuario%></td>
+                                            <td><%=pacUsers.nombreUsuario%></td>                                           
+                                            <td><%=pacUsers.apellidoUsuario%></td>
+                                            <td><%=pacUsers.telefono%></td>
+                                            <td><%=pacUsers.fechaNacimiento.toLocaleDateString()%></td>
+                                            <td><%=pacUsers.correo%></td>
+                                            <td><%=pacUsers.roleUsuario%></td>
+                                            <td><%=pacUsers.fechaRegistroUsuario%></td>
+                                            <td><%=pacUsers.statusUsuario%></td>
+                                            </tr>
+                                       <% })%>
+   
                                     </tbody>
                                 </table>
                             </div>

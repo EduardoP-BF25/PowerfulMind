@@ -64,6 +64,7 @@ webRouter.get('/usuario/searchAll', async (req, res) => {
     }
  });
 
+
  webRouter.get('/homeAdmin/', async (req, res) => {
     try {
         const allUsers = await Usuario.findAll();
@@ -71,7 +72,7 @@ webRouter.get('/usuario/searchAll', async (req, res) => {
         const pacUsers = await Usuario.findAll({ where: {roleUsuario:"Paciente"}});
         const admUsers = await Usuario.findAll({ where: {roleUsuario:"Administrador"}});
 
-        res.render('dashboard/homeAdmin', {allUsers, psicUsers, pacUsers});
+        res.render('dashboard/homeAdmin', {allUsers, psicUsers, pacUsers, admUsers});
     } catch (err) {
         res.render('404');
     }
