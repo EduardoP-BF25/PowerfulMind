@@ -25,6 +25,15 @@ webRouter.get('/registrarse', async (req, res) => {
     }   
 });
 
+webRouter.get('/registerAdmin', async (req, res) => {
+    try {
+        console.log(req.query);
+        res.render('sesiones/registerAdmin');
+    } catch (err) {
+        res.render('404');
+    }   
+});
+
 
 webRouter.get('/login', async (req, res) => {
     try {
