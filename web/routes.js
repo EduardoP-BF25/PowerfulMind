@@ -4,6 +4,7 @@ import { Paciente } from "../src/models/paciente.js";
 import { Publicacion } from "../src/models/publicacion.js";
 import { Cita } from "../src/models/cita.js";
 import { where } from "sequelize";
+import { post } from "../src/controllers/usuario_controller.js";
 export const webRouter = Router();
 
 webRouter.get('/home', async (req, res) => {
@@ -78,9 +79,13 @@ webRouter.get('/usuario/searchAll', async (req, res) => {
     }
 });
 
-webRouter.get('/homePsicologo', async (req, res) => {
+webRouter.get('/homePsicologo/', async (req, res) => {
     try {
-        res.render('dashboard/homePsicologo');
+        const pacientsUsers = await Usuario.findAll({ where: {roleUsuario:"Paciente"}});
+        const posts = await Publicacion.findAll();
+
+
+        res.render('dashboard/homePsicologo', {pacientsUsers, posts});
     } catch (err) {
         res.render('404');
     }
