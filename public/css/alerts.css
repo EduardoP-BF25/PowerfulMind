@@ -1,0 +1,11 @@
+/* SECCION DE OCULTO DE LOS ALERTS */
+.ocultar {
+
+   display: none;
+ }
+ 
+ .mostrar {
+   display: block;
+ }
+
+ 

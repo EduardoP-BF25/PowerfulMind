@@ -25,6 +25,26 @@ webRouter.get('/registrarse', async (req, res) => {
     }   
 });
 
+// RUTA DE PERFIL DE USUARIO
+webRouter.get('/perfil', async (req, res) => {
+    try {
+        console.log(req.query);
+        res.render('dashboard/perfil');
+    } catch (err) {
+        res.render('404');
+    }   
+});
+// RUTA DE RESTABLECER CONTRASEÑA
+webRouter.get('/password', async (req, res) => {
+    try {
+        console.log(req.query);
+        res.render('dashboard/password');
+    } catch (err) {
+        res.render('404');
+    }   
+});
+
+// PAGINA DE INICIO DE SESION ADMINISTRADOR
 webRouter.get('/registerAdmin', async (req, res) => {
     try {
         console.log(req.query);
@@ -56,7 +76,7 @@ webRouter.get('/usuario/searchAll', async (req, res) => {
 // URL DE LA PAGINA
  webRouter.get('/usuario/searchAll/activos', async (req, res) => {
     try {
-       const usuario = await Usuario.findAll({where:{ status : "Activo"}});
+       const usuario = await Usuario.findAll({where:{ statusUsuario : "Activo"}});
      //  Ubicacion del archivo
         res.render('dashboard/homeAdmin', usuario);
     } catch (err) {
@@ -81,8 +101,12 @@ webRouter.get('/usuario/searchAll', async (req, res) => {
         const psicUsers = await Usuario.findAll({ where: {roleUsuario:"Psicologo"}});
         const pacUsers = await Usuario.findAll({ where: {roleUsuario:"Paciente"}});
         const admUsers = await Usuario.findAll({ where: {roleUsuario:"Administrador"}});
+       const usersActive = await Usuario.findAll({where:{ statusUsuario : "Activo"}});
+       const psicUsersActive = await Usuario.findAll({where:{ statusUsuario : "Activo"}});
 
-        res.render('dashboard/homeAdmin', {allUsers, psicUsers, pacUsers, admUsers});
+
+
+        res.render('dashboard/homeAdmin', {allUsers, psicUsers, pacUsers, admUsers, usersActive});
     } catch (err) {
         res.render('404');
     }

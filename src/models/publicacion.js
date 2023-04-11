@@ -18,7 +18,7 @@ export const Publicacion = sequelize.define('publicacion', {
       allowNull: false 
     },
     cuerpoPublicacion:{
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false 
     },
     fechaRegistroPublicacion:{
@@ -31,7 +31,11 @@ export const Publicacion = sequelize.define('publicacion', {
         defaultValue: 'Activo',
         allowNull: false,
         
-    },  
+    },
+    vistas:{
+        type: DataTypes.INTEGER,
+        defaultValue: 0,
+    }
 }, {
     timestamps: false
 });
@@ -47,5 +51,7 @@ Usuario.hasMany(Publicacion, {
 })
 
 
+
+ 
 
 

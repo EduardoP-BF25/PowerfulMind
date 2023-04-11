@@ -24,14 +24,19 @@
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
      
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        
+
+
 
         <script src="../js/main.js"></script>
 
         <link rel="stylesheet" href="../css/estilos.css">   
         <link rel="stylesheet" href="../css/usuario.css">
         <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/sidebarNav.css">
 
 
+        
 
     </head>
     <body class="sb-nav-fixed">
@@ -63,6 +68,9 @@
                
         </nav>
         <div id="layoutSidenav">
+
+            
+
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark " id="sidenavAccordion">
                     <div class="sb-sidenav-menu bg-success">
@@ -105,8 +113,8 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="  ">Perfil</a>
-                                    <a class="nav-link" href=" ">Contraseña</a>
+                                    <a class="nav-link" href="./perfil ">Perfil</a>
+                                    <a class="nav-link" href="./password">Contraseña</a>
                                 </nav>
                             </div>
                            
@@ -114,7 +122,7 @@
                     </div>
                    
                 </nav>
-            </div>
+            </div>        
 
             <div id="layoutSidenav_content">
                 <main>
@@ -131,15 +139,15 @@
                             <div class="row mb-2">
                                 <div class="col-12">
                                     <button type="button" class="btn btn-success w-10" data-bs-toggle="modal" data-bs-target="#modalUsuario" id="botonCrear" >
-                                        <h6> Nuevo Usuario<i class="bi bi-plus-circle-fill "></i></h6>
+                                        <h6>Agregar Nuevo Usuario<i class="bi bi-plus-circle-fill "></i></h6>
                                     </button>
-                                    <button type="button" class="btn btn-success w-10" data-bs-toggle="modal" data-bs-target="#modalUsuario" id="botonCrear" >
+                                    <!-- <button type="button" class="btn btn-success w-10" data-bs-toggle="modal" data-bs-target="#modalUsuario" id="botonCrear" >
                                         <h6> Ver<i class="bi bi-plus-circle-fill "></i></h6>
                                     </button>
                                    
                                     <button type="button" class="btn btn-success w-10" data-bs-toggle="modal" data-bs-target="#modalUsuario" id="botonCrear" >
                                         <h6> Ver Usuarios<i class="bi bi-eye-fill "></i></h6>
-                                    </button>                                          
+                                    </button>                                           -->
                                    
                          
                                 </div>
@@ -564,6 +572,8 @@
         <!-- <script src="../js/Cruds/Gets/getUsers.js"></script> -->
         <script src="../js/Cruds/Post/addUser.js"></script>
         <script src="../js/Cruds/Post/hiddens.js"></script>
+        <script src="../js/sidebarNav.js"></script>
+
 
 
 
@@ -573,7 +583,7 @@
    
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"> </script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-        <script src="js/datatables-simple-demo.js"></script>
+        <!-- <script src="../js/datatables-simple-demo.js"></script> -->
 
     </body>
 </html>
