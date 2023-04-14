@@ -40,9 +40,6 @@ fetch('https://powerfulmind.up.railway.app/usuario/searchAll',{
 
 });
 
-
-
-
 function reloadPage(){
 location.reload();
 }

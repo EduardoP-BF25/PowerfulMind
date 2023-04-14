@@ -15,7 +15,7 @@ import { Especialidad } from "./models/especialidad.js";
 
 async function proyect() {
     try {
-        // sequelize.sync({force: true})
+        sequelize.sync({force: true})
         app.listen(PORT, () => {
             console.log(`Bienvenido a ${PROYECT}`);
         });
