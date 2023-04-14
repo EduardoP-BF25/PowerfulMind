@@ -26,13 +26,14 @@ export const post = async (req, res) => {
 
 // PUT
 export const put = async (req, res) => {
-    let { idPublicacion, newimagePublicacion, newtituloPublicacion, newcuerpoPublicacion, } = req.body;
+    let { idPublicacion, newimagePublicacion, newtituloPublicacion, newcuerpoPublicacion, newstatusPublicacion } = req.body;
     
     try {
         const actualizarPublicacion = await Publicacion.findOne({ where: {idPublicacion} })
-        actualizarPublicacion.tituloPublicacion = tituloPublicacion;
+        actualizarPublicacion.tituloPublicacion = newtituloPublicacion;
         actualizarPublicacion.imagePublicacion = newimagePublicacion;
         actualizarPublicacion.cuerpoPublicacion = newcuerpoPublicacion;
+        actualizarPublicacion.statusPublicacion = newstatusPublicacion;
         // actualizarPublicacion.newStatusPublicacion = statusPublicacion;
         console.log(actualizarPublicacion);
         await actualizarPublicacion.save();
@@ -62,7 +63,19 @@ export const drop = async (req, res) => {
     }
 }
 
-
+// ACTIVAR PUBLICACION
+export const activate = async (req, res) => {
+    const {idPublicacion } = req.body;
+    try {         
+        const actualizarPublicacion = await Publicacion.findOne({ where:{ idPublicacion } });
+        actualizarPublicacion.statusPublicacion = "Activo";
+        console.log(actualizarPublicacion);
+        await actualizarPublicacion.save();
+        res.status(201).json(actualizarPublicacion);
+    } catch (err) {    
+        res.status(500).json(err);
+    }
+}
 
 //GET
 

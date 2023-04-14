@@ -1,6 +1,8 @@
 import { sequelize } from "../config/db.js";
 import { DataTypes } from "sequelize";
 import { Usuario } from "./usuario.js";
+import { Psicologo } from "./psicologo.js";
+
 
 export const Publicacion = sequelize.define('publicacion', { 
     idPublicacion: {
@@ -41,8 +43,8 @@ export const Publicacion = sequelize.define('publicacion', {
 });
 
 
-Publicacion.belongsTo(Usuario);
-Usuario.hasMany(Publicacion, {
+Publicacion.belongsTo(Psicologo);
+Psicologo.hasMany(Publicacion, {
     foreignKey: {
         allowNull: true
     },

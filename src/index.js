@@ -7,6 +7,9 @@ import { Cita } from "./models/cita.js";
 import { Usuario } from "./models/usuario.js";
 import { Publicacion } from "./models/publicacion.js";
 import { Paciente } from "./models/paciente.js";
+import { EstadoEmocional } from "./models/estadoEmocional.js";
+import { Especialidad } from "./models/especialidad.js";
+
 
 // const PORT = process.env.PORT || 4001;
 

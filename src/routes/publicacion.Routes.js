@@ -8,6 +8,7 @@ const publicacionRouter = Router();
 publicacionRouter.post('/add', validateReutilizable, publicacionController.post);
 publicacionRouter.put('/update', authentification, publicacionController.put);
 publicacionRouter.delete('/delete', authentification, authorization, publicacionController.drop);
+publicacionRouter.put('/activate', authentification, publicacionController.activate);
 publicacionRouter.get('/searchOne', publicacionController.getOne);
 publicacionRouter.get('/searchAll', publicacionController.getAll);
 

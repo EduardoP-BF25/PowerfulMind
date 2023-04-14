@@ -63,26 +63,28 @@ webRouter.get('/login', async (req, res) => {
     }
 });
 
-webRouter.get('/usuario/searchAll', async (req, res) => {
-    try {
-       const usuarios = await Usuario.findAll();
-        res.render('dashboard/homeAdmin', {usuarios});
-    } catch (err) {
-        res.render('404');
-    }
- });
+// webRouter.get('/usuario/searchAll', async (req, res) => {
+//     try {
+//        const usuarios = await Usuario.findAll();
+//         res.render('dashboard/homeAdmin', {usuarios});
+//     } catch (err) {
+//         res.render('404');
+//     }
+//  });
 
 
-// URL DE LA PAGINA
- webRouter.get('/usuario/searchAll/activos', async (req, res) => {
-    try {
-       const usuario = await Usuario.findAll({where:{ statusUsuario : "Activo"}});
-     //  Ubicacion del archivo
-        res.render('dashboard/homeAdmin', usuario);
-    } catch (err) {
-        res.render('404');
-    }
- });
+// // URL DE LA PAGINA
+//  webRouter.get('/usuario/searchAll/activos', async (req, res) => {
+//     try {
+//        const usuario = await Usuario.findAll({where:{ statusUsuario : "Activo"}});
+//      //  Ubicacion del archivo
+//         res.render('dashboard/homeAdmin', usuario);
+//     } catch (err) {
+//         res.render('404');
+//     }
+//  });
+
+
 // URL DE LA PAGINA
  webRouter.get('/usuario/searchAll/inactivos', async (req, res) => {
     try {
@@ -104,9 +106,7 @@ webRouter.get('/usuario/searchAll', async (req, res) => {
        const usersActive = await Usuario.findAll({where:{ statusUsuario : "Activo"}});
        const psicUsersActive = await Usuario.findAll({where:{ statusUsuario : "Activo"}});
 
-
-
-        res.render('dashboard/homeAdmin', {allUsers, psicUsers, pacUsers, admUsers, usersActive});
+        res.render('dashboard/homeAdmin', {allUsers, psicUsers, pacUsers, admUsers, usersActive, psicUsersActive});
     } catch (err) {
         res.render('404');
     }

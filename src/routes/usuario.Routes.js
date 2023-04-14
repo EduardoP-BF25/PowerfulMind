@@ -8,6 +8,7 @@ const usuarioRouter = Router();
 
 usuarioRouter.post('/add', validaCamposUsuario, validateReutilizable, usuarioController.post);
 usuarioRouter.put('/update', authentification, usuarioController.put);
+usuarioRouter.put('/activate', authentification, usuarioController.activate);
 usuarioRouter.delete('/delete', authorization, authentification,  usuarioController.drop);
 usuarioRouter.get('/searchOne',  usuarioController.getOne);
 usuarioRouter.get('/searchAll', usuarioController.getAll);

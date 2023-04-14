@@ -44,19 +44,19 @@ export const post = async (req, res) => {
 //PUT
  
 export const put = async (req, res) => {
-    let { newimageUsuario, newnombreUsuario, newapellidoUsuario, newtelefono, correo, newcorreo, password, newPassword} = req.body;
+    let { newimageUsuario, newnombreUsuario, newapellidoUsuario, newtelefono, newcorreo, newPassword} = req.body;
 
-        password = await bcrypt.hash(password, 10);
-        newPassword = await bcrypt.hash(newPassword, 10);
-    
+        // password = await bcrypt.hash(password, 10);
+        // newPassword = await bcrypt.hash(newPassword, 10);
     try {
-        const actualizarUsuario = await Usuario.findOne({ where: { [Op.and]: [{correo}, {password}] } })
-        actualizarUsuario.imageUsuario = newnombreUsuario;
+        const actualizarUsuario = await Usuario.findOne({ where: { [Op.and]: [{newcorreo}, {newPassword}] } })
+        actualizarUsuario.imageUsuario = newimageUsuario;
         actualizarUsuario.nombreUsuario = newnombreUsuario;
         actualizarUsuario.apellidoUsuario = newapellidoUsuario;
         actualizarUsuario.correo = newcorreo;
         actualizarUsuario.password = newPassword;
         actualizarUsuario.telefono = newtelefono;
+        actualizarUsuario.statusUsuario = "Activo";
         console.log(actualizarUsuario);
         await actualizarUsuario.save();
         res.status(201).json(actualizarUsuario);
@@ -71,7 +71,7 @@ export const drop = async (req, res) => {
     const {idUsuario } = req.body;
     try {         
         const actualizarUsuario = await Usuario.findOne({ where:{ idUsuario } });
-        actualizarUsuario.status = "Inactivo";
+        actualizarUsuario.statusUsuario = "Inactivo";
         // actualizarUsuario.newApellidoUsuario = apellidoUsuario;
         // actualizarUsuario.password = newPassword;
         // actualizarUsuario.telefono = telefono;
@@ -83,13 +83,29 @@ export const drop = async (req, res) => {
     }
 }
 
+// ACTIVAR USUARIO
+export const activate = async (req, res) => {
+    const {idUsuario } = req.body;
+    try {         
+        const actualizarUsuario = await Usuario.findOne({ where:{ idUsuario } });
+        actualizarUsuario.statusUsuario = "Activo";
+        // actualizarUsuario.newApellidoUsuario = apellidoUsuario;
+        // actualizarUsuario.password = newPassword;
+        // actualizarUsuario.telefono = telefono;
+        console.log(actualizarUsuario);
+        await actualizarUsuario.save();
+        res.status(201).json(actualizarUsuario);
+    } catch (err) {    
+        res.status(500).json(err);
+    }
+}
 
 //GET
 
 export const getOne = async (req, res) => {
-    const { correo } = req.body;
+    const { idUsuario } = req.body;
     try {
-        const getOneUsuario = await Usuario.findOne({where:{ correo }});
+        const getOneUsuario = await Usuario.findOne({where:{ idUsuario }});
         res.status(201).json(getOneUsuario);
         console.log(getOneUsuario);
 
