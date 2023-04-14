@@ -104,9 +104,9 @@ webRouter.get('/login', async (req, res) => {
         const pacUsers = await Usuario.findAll({ where: {roleUsuario:"Paciente"}});
         const admUsers = await Usuario.findAll({ where: {roleUsuario:"Administrador"}});
        const usersActive = await Usuario.findAll({where:{ statusUsuario : "Activo"}});
-       const psicUsersActive = await Usuario.findAll({where:{ statusUsuario : "Activo"}});
+    //    const psicUsersActive = await Usuario.findAll({where:{ statusUsuario : "Activo"}});
 
-        res.render('dashboard/homeAdmin', {allUsers, psicUsers, pacUsers, admUsers, usersActive, psicUsersActive});
+        res.render('dashboard/homeAdmin', {allUsers, psicUsers, pacUsers, admUsers, usersActive});
     } catch (err) {
         res.render('404');
     }
