@@ -82,9 +82,12 @@
                             <a class="nav-link">
                                 <div class="sb-nav-link-icon"><i class="bi bi-postage-fill"></i></div>
                                 <button type="button" class="btn btn-outline-light w-10" id="hidden-posts"> Publicaciones</button>
-
                             </a>
-                                                       
+                            <a class="nav-link">
+                                <div class="sb-nav-link-icon"><i class="bi bi-postage-fill"></i></div>
+                                <button type="button" class="btn btn-outline-light w-10" id="hidden-estadosEmocionales"> Estados Emocionales</button>
+                            </a>                            
+                            
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="bi bi-gear"></i></div>
                                 <button type="button" class="btn btn-outline-light w-10"> Configuracion</button>
@@ -122,9 +125,11 @@
                                         <h6> Nuevo Paciente<i class="bi bi-plus-circle-fill "></i></h6>
                                     </button>
                                     <button type="button" class="btn btn-success w-10" data-bs-toggle="modal" data-bs-target="#addPost" id="botonCrear" >
-                                        <h6> Agregar nuevo Post<i class="bi bi-plus-circle-fill "></i></h6>
+                                        <h6> Agregar nueva publicacion<i class="bi bi-plus-circle-fill "></i></h6>
                                     </button>
-                                   
+                                    <button type="button" class="btn btn-success w-10" data-bs-toggle="modal" data-bs-target="#addPost" id="botonCrear" >
+                                        <h6> Agregar nuevo estado emocional<i class="bi bi-plus-circle-fill "></i></h6>
+                                    </button>                                  
                                      
                                    
                          
@@ -177,7 +182,7 @@
                                 </table>
                             </div>
 
-                            <!-- TABLA ADMINISTRADORES OCULTO -->
+                            <!-- TABLA PUBLICACION OCULTO -->
                             <div id="tabla-posts" style="display: none;">
                                 <table id="datatablesSimple" class="dataTable">
                                 
@@ -188,17 +193,27 @@
                                                
                                     </tr>
                                     <tbody id="users">
-                                        <% posts.forEach(posts =>  { %>
-                                            <tr>
-                                            <td><%=posts.imagePublicacion%></td>
-                                            <td><%=posts.tituloPublicacion%></td>   
-                                            <td><%=posts.cuerpoPublicacion%></td>                                           
 
-                                            </tr>
-                                       <% })%>
                                     </tbody>
                                 </table>
                             </div>
+
+                            <!-- TABLA ESTADOS EMOCIOANLES OCULTO -->
+                            <div id="tabla-posts" style="display: none;">
+                                <table id="datatablesSimple" class="dataTable">
+                                
+                                    <tr>
+                                        <th class="th-Tables">Imagen</th>
+                                        <th class="th-Tables">Titulo</th>
+                                        <th class="th-Tables">Cuerpo</th>
+                                               
+                                    </tr>
+                                    <tbody id="users">
+
+                                    </tbody>
+                                </table>
+                            </div>
+
                         </div>
                     </div>
                 </main>

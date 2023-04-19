@@ -19,27 +19,18 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
 
-
         
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
      
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        
-
-
-
         <script src="../js/main.js"></script>
-
+        <link rel="stylesheet" href="../css/styles.css">        
         <link rel="stylesheet" href="../css/estilos.css">   
         <link rel="stylesheet" href="../css/usuario.css">
-        <link rel="stylesheet" href="../css/styles.css">
+
         <link rel="stylesheet" href="../css/sidebarNav.css">
 
-
-        
-
     </head>
-    <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-success">
             <!-- Navbar Brand-->
             <a class="navbar-brand  me-4 mx-4" href="./home">  <img class="logo" src="../images/POWER_LOGO.png" alt="Logo"> </a>
@@ -67,10 +58,13 @@
             </ul>
                
         </nav>
+
+    <body class="sb-nav-fixed">
+
+        <main id="scrollMain">
+
+        
         <div id="layoutSidenav">
-
-            
-
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark " id="sidenavAccordion">
                     <div class="sb-sidenav-menu bg-success">
@@ -79,9 +73,14 @@
                             <div class="sb-sidenav-menu-heading"><h2 >Menu</h2> </div>
                             <a class="nav-link" href="./home">
                                 <div class="sb-nav-link-icon"><i class="bi bi-house-door"></i></div>
-                                <button type="button" class="btn btn-outline-light w-10" > Inicio</button>
-
+                                <button type="button" class="btn btn-outline-light w-10" > Home</button>
                             </a>
+                            <!-- <a class="nav-link">
+                                
+                                <div class="sb-nav-link-icon"><i class="bi bi-people"></i></div>
+                                <button type="button" class="btn btn-outline-light w-10" id="hidden-Inicio"> Inicio</button>
+                                
+                            </a>                            -->
                             <a class="nav-link">
                                 
                                 <div class="sb-nav-link-icon"><i class="bi bi-people"></i></div>
@@ -125,22 +124,20 @@
             </div>        
 
             <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-0">
 
-                        <!-- Todo dentro de este div se debe modificar -->
-                    
-
-                        <div class="card-header bg-dark text-white">
-                                
-                            <h1><i class="fas fa-table me-1 text-white"></i>Bienvenido</h1> 
+                        <!-- Todo dentro de este div se debe modificar -->   
+                        <div class="card-header bg-dark text-white centar">                               
+                            <h1><i class="fas fa-table me-1 text-white"></i>Bienvenido </h1> 
                         </div>
                         <div class="card-body">
                             <div class="row mb-2">
                                 <div class="col-12">
-                                    <button type="button" class="btn btn-success w-10" data-bs-toggle="modal" data-bs-target="#modalUsuario" id="botonCrear" >
-                                        <h6>Agregar Nuevo Usuario<i class="bi bi-plus-circle-fill "></i></h6>
+                                    <button type="button" class="alert alert-info w-10" data-bs-toggle="modal" data-bs-target="#modalUsuario" id="botonCrear" >
+                                        <h6>Agregar Nuevo Usuario</h6><i class="bi bi- "></i>
                                     </button>
+
+
+                                    
                                     <!-- <button type="button" class="btn btn-success w-10" data-bs-toggle="modal" data-bs-target="#modalUsuario" id="botonCrear" >
                                         <h6> Ver<i class="bi bi-plus-circle-fill "></i></h6>
                                     </button>
@@ -155,23 +152,38 @@
                             </div>
 
                             
-                            <!-- <div>
-                                <div class="card-header bg-dark text-white ">
+
+
+                            <!-- BLOQUE INICIO -->
+                            <div id="blockInicio" style="display: block;"  class="">
                                 
-                                    <h1>Bienvenido a Powerfulmind</h1> 
+                                <div class="card-text bg-dark text-white centar row " id="dashboardDatas">
+                                        
+                                    <div class="bg-light text-dark centar col-4 dashboardCards">
+                                            DATOS 
+                                    </div>    
+                                    <div class="bg-dark text-white centar col-4 dashboardCards">
+                                            DATOS 
+                                    </div>   
+                                    <div class="bg-dark text-white centar col-4 dashboardCards">
+                                            DATOS 
+                                    </div>
+                                          
                                 </div>
-                                <div class="card-header bg-dark text-white">
-                                
-                                    <h1><i class="fas fa-table me-1 text-white"></i>Tabla de Usuarios</h1> 
-                                </div>
-                            </div> -->
-
-
-
+                            </div>
 
                             <!-- TABLA USUARIOS OCULTO -->
-                            <div id="tabla-usuarios" style="display: none;">
-                                <table id="datatablesSimple" class="dataTable">
+                            <div id="tabla-usuarios" style="display: none;"  class="">
+                                <button type="button" class="alert alert-warning w-10" data-bs-toggle="modal" data-bs-target="#modalUsuarioedit" id="botonEditar" >
+                                    <h6>Ver Usuarios Activos<i class="bi bi-person-add"></i></i></h6>
+                                </button>
+                                <button type="button" class="alert alert-warning w-10" data-bs-toggle="modal" data-bs-target="#modalUsuarioedit" id="botonEditar" >
+                                    <h6>Ver Usuarios Inactivos<i class="bi bi-person-add"></i></i></h6>
+                                    
+                                </button>                                
+
+
+                                <table id="" class="dataTable card-body">
                                 
                                     <tr>
                                         <th class="th-Tables">Foto</th>
@@ -182,12 +194,15 @@
                                         <th class="th-Tables">Correo</th>
                                         <th class="th-Tables">Rol</th>
                                         <th class="th-Tables">Fecha de ingreso</th>
-                                        <th class="th-Tables">Estado de usuario</th>                                                 
+                                        <th class="th-Tables">Estado de usuario</th>
+                                        <th class="th-Tables">Modificar</th>                                                 
+
                                     </tr>
                                     <tbody id="users">
                                         <% allUsers.forEach(allUsers =>  { %>
                                             <tr>
-                                            <td><%=allUsers.imageUsuario%></td>
+
+                                            <td><img src="<%=allUsers.imageUsuario%>" class="imageUser"></td>
                                             <td><%=allUsers.nombreUsuario%></td>                                           
                                             <td><%=allUsers.apellidoUsuario%></td>
                                             <td><%=allUsers.telefono%></td>
@@ -196,6 +211,11 @@
                                             <td><%=allUsers.roleUsuario%></td>
                                             <td><%=allUsers.fechaRegistroUsuario%></td>
                                             <td><%=allUsers.statusUsuario%></td>
+                                            <td>
+                                                <button type="button" class="alert alert-warning w-10" data-bs-toggle="modal" data-bs-target="#modalUsuarioedit" id="botonEditar" >
+                                                    <h6>Editar Usuario<i class="bi bi-person-add"></i></i></h6>
+                                                </button>
+                                            </td>
                                             </tr>
                                        <% })%>
                                     </tbody>
@@ -215,12 +235,14 @@
                                         <th class="th-Tables">Correo</th>
                                         <th class="th-Tables">Rol</th>
                                         <th class="th-Tables">Fecha de ingreso</th>
-                                        <th class="th-Tables">Estado de usuario</th>                                                  
+                                        <th class="th-Tables">Estado de usuario</th>
+                                        <th class="th-Tables">Modificar</th>                                                 
+
                                     </tr>
                                     <tbody id="users">
                                         <% psicUsers.forEach(psicUsers =>  { %>
                                             <tr>
-                                            <td><%=psicUsers.imageUsuario%></td>
+                                            <td><img href="<%=psicUsers.imageUsuario%>" class="imageUser"></td>
                                             <td><%=psicUsers.nombreUsuario%></td>                                           
                                             <td><%=psicUsers.apellidoUsuario%></td>
                                             <td><%=psicUsers.telefono%></td>
@@ -229,6 +251,11 @@
                                             <td><%=psicUsers.roleUsuario%></td>
                                             <td><%=psicUsers.fechaRegistroUsuario%></td>
                                             <td><%=psicUsers.statusUsuario%></td>
+                                            <td>
+                                                <button type="button" class="alert alert-warning w-10" data-bs-toggle="modal" data-bs-target="#modalUsuarioedit" id="botonEditar" >
+                                                    <h6>Editar Usuario<i class="bi bi-person-add"></i></i></h6>
+                                                </button>
+                                            </td>
                                             </tr>
                                        <% })%>
                                     </tbody>
@@ -248,12 +275,14 @@
                                         <th class="th-Tables">Correo</th>
                                         <th class="th-Tables">Rol</th>
                                         <th class="th-Tables">Fecha de ingreso</th>
-                                        <th class="th-Tables">Estado de usuario</th>                                              
+                                        <th class="th-Tables">Estado de usuario</th>
+                                        <th class="th-Tables">Modificar</th>                                                 
+
                                     </tr>
                                     <tbody id="users">
                                         <% pacUsers.forEach(pacUsers =>  { %>
                                             <tr>
-                                            <td><%=pacUsers.imageUsuario%></td>
+                                            <td><img src="<%=pacUsers.imageUsuario%>" class="imageUser"></td>
                                             <td><%=pacUsers.nombreUsuario%></td>                                           
                                             <td><%=pacUsers.apellidoUsuario%></td>
                                             <td><%=pacUsers.telefono%></td>
@@ -262,6 +291,11 @@
                                             <td><%=pacUsers.roleUsuario%></td>
                                             <td><%=pacUsers.fechaRegistroUsuario%></td>
                                             <td><%=pacUsers.statusUsuario%></td>
+                                            <td>
+                                                <button type="button" class="alert alert-warning w-10" data-bs-toggle="modal" data-bs-target="#modalUsuarioedit" id="botonEditar" >
+                                                    <h6>Editar Usuario<i class="bi bi-person-add"></i></i></h6>
+                                                </button>
+                                            </td>
                                             </tr>
                                        <% })%>
                                     </tbody>
@@ -281,12 +315,14 @@
                                         <th class="th-Tables">Correo</th>
                                         <th class="th-Tables">Rol</th>
                                         <th class="th-Tables">Fecha de ingreso</th>
-                                        <th class="th-Tables">Estado de usuario</th>                                                
+                                        <th class="th-Tables">Estado de usuario</th>
+                                        <th class="th-Tables">Modificar</th>                                                 
+
                                     </tr>
                                     <tbody id="users">
                                         <% admUsers.forEach(admUsers =>  { %>
                                             <tr>
-                                            <td><%=admUsers.imageUsuario%></td>
+                                            <td><img src="<%=admUsers.imageUsuario%>" class="imageUser"></td>
                                             <td><%=admUsers.nombreUsuario%></td>                                           
                                             <td><%=admUsers.apellidoUsuario%></td>
                                             <td><%=admUsers.telefono%></td>
@@ -295,98 +331,106 @@
                                             <td><%=admUsers.roleUsuario%></td>
                                             <td><%=admUsers.fechaRegistroUsuario%></td>
                                             <td><%=admUsers.statusUsuario%></td>
+                                            <td>
+                                                <button type="button" class="alert alert-warning w-10" data-bs-toggle="modal" data-bs-target="#modalUsuarioedit" id="botonEditar" >
+                                                    <h6>Editar Usuario<i class="bi bi-person-add"></i></h6>
+                                                </button>
+                                            </td>
                                             </tr>
                                        <% })%>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                    </div>
-                </main>
-              
-                <footer class="bg-dark text-white text-center text-lg-start ">
-                    <!-- Grid container -->
-                    <div class="container p-4">
-                      <!--Grid row-->
-                      <div class="row">
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <footer class="bg-dark text-white text-center text-lg-start ">
+                            <!-- Grid container -->
+                            <div class="container p-4">
+                              <!--Grid row-->
+                              <div class="row">
+                                <!--Grid column-->
+                                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                                  
+                                  <a href="./home" class="logo">  <img class="logo" src="../images/POWER_LOGO.png" alt="Logo"> </a>
+                                  <p>
+                                   
+                                  </p>
+                                </div>
+                                <!--Grid column-->
                           
-                          <a href="./home" class="logo">  <img class="logo" src="../images/POWER_LOGO.png" alt="Logo"> </a>
-                          <p>
-                           
-                          </p>
-                        </div>
-                        <!--Grid column-->
-                  
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                            <div id="box2" class="box">
-                                <h5>CONTACTO</h5>
-                                <p>Telefono:  99-94-56-88-99</p>
-                                <p>Email: PowerfulMind25@gmail.com</p>
-                            </div>
-                        </div>
-                        <!--Grid column-->
-                        
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                            <div  id="box1" class="box">
-                                <h5>SIGUENOS</h5>
-                               
-                                <p>Carrillo Cruz Alondra Michelle</p>
-                                <p>Poot Hoil Dalia Asucena </p>
-                                <p>Puc Barrera Angel Eduardo </p>
-                            </div>
-                
-                            
-                        </div>
-                        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                            <section class="mb-4">
-                                <!-- Facebook -->
-                                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                                  ><i class="fab fa-facebook-f"></i
-                                ></a>
-                          
-                                <!-- Twitter -->
-                                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                                  ><i class="fab fa-twitter"></i
-                                ></a>
-                          
-                                <!-- Google -->
-                                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                                  ><i class="fab fa-google"></i
-                                ></a>
-                          
-                                <!-- Instagram -->
-                                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                                  ><i class="fab fa-instagram"></i
-                                ></a>
-                          
-                                <!-- Linkedin -->
-                                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-                                  ><i class="fab fa-linkedin-in"></i
-                                ></a>
-                          
+                                <!--Grid column-->
+                                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                                    <div id="box2" class="box">
+                                        <h5>CONTACTO</h5>
+                                        <p>Telefono:  99-94-56-88-99</p>
+                                        <p>Email: PowerfulMind25@gmail.com</p>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
                                 
-                              </section>
-                           </div> 
-                
-                       
-                
-                        <!--Grid column-->
-                      </div>
-                      <!--Grid row-->
-                    </div>
-                    <!-- Grid container -->
-                  
-                  
-                    <!-- Copyright -->
-                    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                      © 2022 Copyright
-                    </div>
-                    <!-- Copyright -->
-                  </footer>
+                                <!--Grid column-->
+                                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                                    <div  id="box1" class="box">
+                                        <h5>SIGUENOS</h5>
+                                       
+                                        <p>Carrillo Cruz Alondra Michelle</p>
+                                        <p>Poot Hoil Dalia Asucena </p>
+                                        <p>Puc Barrera Angel Eduardo </p>
+                                    </div>
+                        
+                                    
+                                </div>
+                                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                                    <section class="mb-4">
+                                        <!-- Facebook -->
+                                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                                          ><i class="fab fa-facebook-f"></i
+                                        ></a>
+                                  
+                                        <!-- Twitter -->
+                                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                                          ><i class="fab fa-twitter"></i
+                                        ></a>
+                                  
+                                        <!-- Google -->
+                                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                                          ><i class="fab fa-google"></i
+                                        ></a>
+                                  
+                                        <!-- Instagram -->
+                                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                                          ><i class="fab fa-instagram"></i
+                                        ></a>
+                                  
+                                        <!-- Linkedin -->
+                                        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                                          ><i class="fab fa-linkedin-in"></i
+                                        ></a>
+                                  
+                                        
+                                      </section>
+                                   </div> 
+                        
+                               
+                        
+                                <!--Grid column-->
+                              </div>
+                              <!--Grid row-->
+                            </div>
+                            <!-- Grid container -->
+                          
+                          
+                            <!-- Copyright -->
+                            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                              © 2022 Copyright
+                            </div>
+                            <!-- Copyright -->
+                          </footer>
+                        
+
+                </main>                   
+               
+              
+
 
             </div>
         </div>
@@ -449,7 +493,6 @@
                                 <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
 
                                     <input type="submit" class="btn btn-primary" name="Registrarse" value="Registrarse" onclick="sendDataAdmin()" >
-                           
                             </div>
 
                         </form>
@@ -522,40 +565,36 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header bg-dark text-white">
-                        <h5 class="modal-title" id="exampleModalLabeledit">Usuario</h5>
+                        <h5 class="modal-title" id="exampleModalLabeledit"> </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form id="contenedor" class="row justify-content-center">
                     <div class="modal-body">
                         
                         <input id="txtidedit" type="hidden" value="0" />
-                   
                         <div class="row g-2">      
         
                             <div class="col-sm-6">
                                 <label for="txtnombres" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="txtnombresedit" autocomplete="off" value="Alondra MIchelle">
+                                <input type="text" class="form-control" id="txtnombresedit" autocomplete="off" >
                             </div>
-        
-        
+
                             <div class="col-sm-6">
                                 <label for="txtapellidos" class="form-label">Apellido</label>
-                                <input type="text" class="form-control" id="txtapellidosedit" autocomplete="off" value="Carrillo Cruz">
+                                <input type="text" class="form-control" id="txtapellidosedit" autocomplete="off" >
                             </div>
-        
-        
+
                             <div class="col-sm-6">
                                 <label for="txtcorreo" class="form-label">Correo</label>
-                                <input type="text" class="form-control" id="txtcorreoedit" autocomplete="off" value="AlondraMichelle@gmail.com">
+                                <input type="text" class="form-control" id="txtcorreoedit" autocomplete="off" >
                             </div>
 
                             <div class="col-sm-6">
                                 <label for="txtcorreo" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="txtcontraseñaedit" autocomplete="off" value="123">
+                                <input type="password" class="form-control" id="txtcontraseñaedit" autocomplete="off" >
                             </div>
         
                         </div>
-
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -569,16 +608,11 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="../js/scripts.js"></script>
-        <!-- <script src="../js/Cruds/Gets/getUsers.js"></script> -->
-        <script src="../js/Cruds/Post/addUser.js"></script>
+        <script src="../js/Cruds/Post/adminAddUser.js"></script>
         <script src="../js/Cruds/Post/hiddens.js"></script>
         <script src="../js/sidebarNav.js"></script>
 
-
-
-
-    
-        
+       
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
    
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"> </script>

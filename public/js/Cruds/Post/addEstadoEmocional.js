@@ -1,17 +1,15 @@
-const formPublicacion = document.getElementById("psicAddPublicacion");
+const formEstadoEmocional = document.getElementById("psicAddEstadoEmocional");
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     FileList;
     // sendData();
 });
-function sendDataPublicacion() {
+function sendDataEstadoEmocional() {
     // const url = "http://localhost:3000/registrarse.html"; // reemplazar con la URL de tu API
-    const url =  "https://powerfulmind.up.railway.app/publicacion/add";
+    const url =  "https://powerfulmind.up.railway.app/estadoEmocional/add";
     const data = {
-      
-      imagePublicacion: document.getElementById("imagePublicacion").value,
-      tituloPublicacion: document.getElementById("tituloPublicacion").value,
-      cuerpoPublicacion: document.getElementById("cuerpoPublicacion").value,       
+
+        nombre: document.getElementById("nombreEstadoEmocional").value,       
 
     };
     const options = {

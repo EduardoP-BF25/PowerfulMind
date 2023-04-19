@@ -84,6 +84,4 @@ function verificarPasswords() {
       return true;
       
    }
-
-   
 }

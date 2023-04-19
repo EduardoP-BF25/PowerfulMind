@@ -159,3 +159,25 @@ width: 310px;
 
 
 
+.imageUser{
+  padding: 2px;
+  height: 100px;
+
+}
+
+#scrollMain{
+  height: 100%;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  width: 100%;
+
+}
+
+#dashboardDatas{
+  padding: 20px;
+}
+
+.dashboardCards{
+  height: 80px;
+  padding: 20px;
+}

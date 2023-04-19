@@ -1,18 +1,20 @@
-const formPublicacion = document.getElementById("psicAddPublicacion");
+const formUser = document.getElementById("adminAddUser");
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     FileList;
     // sendData();
 });
-function sendDataPublicacion() {
+function sendDataAdmin() {
     // const url = "http://localhost:3000/registrarse.html"; // reemplazar con la URL de tu API
-    const url =  "https://powerfulmind.up.railway.app/publicacion/add";
+    const url =  "https://powerfulmind.up.railway.app/usuario/add";
     const data = {
       
-      imagePublicacion: document.getElementById("imagePublicacion").value,
-      tituloPublicacion: document.getElementById("tituloPublicacion").value,
-      cuerpoPublicacion: document.getElementById("cuerpoPublicacion").value,       
-
+        nombreUsuario: document.getElementById("nombreusuario").value,
+        apellidoUsuario: document.getElementById("apellidousuario").value,
+        fechaNacimiento: document.getElementById("fechaNacimiento").value,       
+        correo: document.getElementById("correo").value,
+        password: document.getElementById("contraseña").value,
+        roleUsuario: document.getElementById("roleUsuario").value,
     };
     const options = {
     method: "POST",

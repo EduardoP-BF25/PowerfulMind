@@ -82,12 +82,15 @@
                           </div>
                           <div class="mb-3">
                             <label for="inputcontra">Contraseña</label>
-                            
-                            <input class="form-control" id="inputcontra" type="password" placeholder="Escriba su contraseña" />                            
-                            
-
+                            <!-- <input class="form-control" id="inputcontra" type="password" placeholder="Escriba su contraseña"/>                       -->
+                            <input type="password" name="password" id="inputcontra" placeholder="Escriba su contraseña"/>
+                            <i class="bi bi-eye-slash " id="iconPassword"></i>                        
                           </div>
-
+                          <!-- <div class="mb-3">
+                            <label for="form-label">Contraseña</label>
+                            <input type="password" name="password" id="password" />
+                            <i class="bi bi-eye-slash " id="iconPassword"></i>
+                          </div> -->
                           <!-- <div class="mb-3">
                             <label for="inputcontra">Contraseña</label>
                             <input class="form-control" id="inputcontra" type="password" placeholder="Escriba su contraseña" name="password" id="password" />
@@ -121,6 +124,26 @@
           </div>
       </div>
   </main>
+
+  <!-- ALERTS-SESSIONS -->
+  <div class="modal fade" id="modalUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title" id="exampleModalLabel">Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div> -->
+
+            <!-- Mensaje de inicio de sesion -->
+            <div class="alert-sesion" id="div-alerts">
+
+
+
+            </div>
+        </div>
+    </div>
+  </div>
+
 
     <footer class="bg-dark text-white text-center text-lg-start ">
       <!-- Grid container -->
@@ -209,7 +232,7 @@
 
 
       <script src="../js/Cruds/Post/login.js"></script>
-      <script src="../js/registerPassword.js"></script>
+      <script src="../js/loginPassword.js"></script>
 
       <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </body>
